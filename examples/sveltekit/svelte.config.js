@@ -7,10 +7,18 @@ const config = {
         target: '#svelte',
 
         vite: {
+            build: {
+                minify: false
+            },
             plugins: [routify()],
             resolve: {
                 dedupe: ['svelte'],
             },
+            server: {
+                fs: {
+                    strict: false
+                }
+            }
         },
 
         router: false
